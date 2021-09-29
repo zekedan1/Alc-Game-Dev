@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
-{
-    // Start is called before the first frame update
+{  
+    public Transform player;
+    private Rigidbody2D rb;
+    // Start is called before the first frame update   
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
