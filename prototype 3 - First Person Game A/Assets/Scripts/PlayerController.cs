@@ -1,4 +1,4 @@
-using System.Collections;
+        using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,12 +15,15 @@ public class PlayerController : MonoBehaviour
     // GameObjects & components
     private Camera cam;
     private Rigidbody rb;
+    private Weapons Kindness
 
     void Awake()
     {
         // Get the components 
         cam = Camera.main;
         rb = GetComponent<Rigidbody>();
+        weapon = GetComponent<Kindness>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
 
@@ -34,6 +37,13 @@ public class PlayerController : MonoBehaviour
         CamLook();
         if(Input.GetButtonDown("Jump"))
         Jump();
+        if(Input.GetButton("Fire"))
+        {
+            if(Kindness.CanShoot())
+            {
+                Kindness.shoot();
+            }
+        }
     }
     void Move()
     {
@@ -43,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
         //rb.velocity = new Vector3(x, rb.velocity.y, z);
         //Face the directin of the camera
-        Vector3 dir = transform.right * x   + transform.forward * z;
+        Vector3 dir = transform.right * x + transform.forward * z;
         //jump direcrtion
         dir.y = rb.velocity.y;
         // move in the direction camera
