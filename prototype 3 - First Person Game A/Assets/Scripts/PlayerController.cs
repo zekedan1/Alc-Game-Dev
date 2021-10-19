@@ -1,4 +1,4 @@
-        using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,14 +15,14 @@ public class PlayerController : MonoBehaviour
     // GameObjects & components
     private Camera cam;
     private Rigidbody rb;
-    private Weapons Kindness
+    private Weapons weapons;
 
     void Awake()
     {
         // Get the components 
         cam = Camera.main;
         rb = GetComponent<Rigidbody>();
-        weapon = GetComponent<Kindness>();
+        weapons = GetComponent<Weapons>();
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -37,11 +37,11 @@ public class PlayerController : MonoBehaviour
         CamLook();
         if(Input.GetButtonDown("Jump"))
         Jump();
-        if(Input.GetButton("Fire"))
+        if(Input.GetButton("Fire1"))
         {
-            if(Kindness.CanShoot())
+            if(weapons.CanShoot())
             {
-                Kindness.shoot();
+                weapons.shoot();
             }
         }
     }

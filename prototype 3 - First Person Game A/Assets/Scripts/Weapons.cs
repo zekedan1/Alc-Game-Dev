@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kindness : MonoBehaviour
+public class Weapons : MonoBehaviour
 {
-    public GameObjects bulletPrefab;
+    public GameObject bulletPrefab;
     public Transform muzzle;
     public float bulletSpeed;
 
@@ -38,7 +38,7 @@ public class Kindness : MonoBehaviour
         lastShootTime = Time.time;
         curAmmo--;
 
-        GameObjects bullet = Instatiate(bulletPrefab, muzzle.position, muzzle.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
 
         bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * bulletSpeed;
     }
