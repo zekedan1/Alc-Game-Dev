@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 79014452}
   - component: {fileID: 79014451}
   - component: {fileID: 79014456}
+  - component: {fileID: 79014457}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -255,6 +256,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &79014457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79014450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb35f48515daa478b95bf1af7751ef7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 2606980200888754795, guid: a226de07369f14094a52be9360a90800, type: 3}
+  muzzle: {fileID: 2015343727}
+  bulletSpeed: 150
+  curAmmo: 0
+  maxAmmo: 0
+  infiniteAmmo: 1
+  shootRate: 100
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
