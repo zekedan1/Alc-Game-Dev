@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         {
             if(weapons.CanShoot())
             {
-                weapons.shoot();
+                weapons.Shoot();
             }
         }
     }

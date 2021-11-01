@@ -34,7 +34,7 @@ public class Weapons : MonoBehaviour
 
         return false;
     }
-    public void shoot()
+    public void Shoot()
     {
         lastShootTime = Time.time;
         curAmmo--;
