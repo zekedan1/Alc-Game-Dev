@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
     {
         //Gather the Components
         weapon = GetComponent<Weapons>();
-        target = FindObjectOfType<PlayerController>().gameObject;
+        target = FindObjectOfType<PlayerController>().gameObject;   
 
         InvokeRepeating("UpdatePath", 0.0f, 0.5f);
     }
@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        Destroy(gameObject);        
     }
     // Update is called once per frame
     void Update()
@@ -76,10 +76,11 @@ public class Enemy : MonoBehaviour
             {
                 weapon.Shoot();
             }
-            else
+           
+        }
+        else
             {
                 ChaseTarget();
             }
-        }
     }
 }

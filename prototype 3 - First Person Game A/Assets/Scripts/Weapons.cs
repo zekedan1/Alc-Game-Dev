@@ -34,6 +34,7 @@ public class Weapons : MonoBehaviour
 
         return false;
     }
+    
     public void Shoot()
     {
         lastShootTime = Time.time;
