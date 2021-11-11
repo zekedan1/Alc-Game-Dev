@@ -74,7 +74,15 @@ public class PlayerController : MonoBehaviour
 
 
     }
+    public void GiveHealth(int amountToGive)
+    {
+        curHP = Mathf.Clamp(curHP + amountToGive, 0, maxHP);
+    }
 
+    public void GiveAmmo ( int amountToGive)
+    {
+        weapons.curAmmo = Mathf.Clamp(weapons.curAmmo + amountToGive, 0, weapons.maxAmmo);
+    }
     void Jump()
     {
         Ray ray = new Ray(transform.position, Vector3.down);
