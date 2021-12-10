@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
 
     private Weapons weapon;
     private GameObject target;
+
+    private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,12 +61,16 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);        
+        rb.constraints = RigidbodyConstraints.None;
+        rb.AddForce(Vector3.back * 10, ForceMode.Impulse);
+        rb.AddForce(Vector3.up * 5, ForceMode.Impulse);
+        GameManager.instance.AddScore(scoreToGive);
+        Destroy(gameObject,1);        
     }
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir = (target.transform.position - transform.position).normalized;  
+        Vector3 dir = (target.transform.position - transform.position).normalized;      
         float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
         
         transform.eulerAngles = Vector3.up * angle;

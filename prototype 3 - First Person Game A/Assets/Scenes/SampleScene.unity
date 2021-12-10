@@ -782,6 +782,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8943140064164590765, guid: a42e918858be54cd69e60b85dc6f0923, type: 3}
+      propertyPath: value
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a42e918858be54cd69e60b85dc6f0923, type: 3}
 --- !u!1 &376058520
@@ -1757,11 +1761,11 @@ MonoBehaviour:
   bulletPool: {fileID: 763805270}
   bulletPrefab: {fileID: 2606980200888754795, guid: a226de07369f14094a52be9360a90800, type: 3}
   muzzle: {fileID: 583643748}
-  bulletSpeed: 10
-  curAmmo: 10
-  maxAmmo: 10
+  bulletSpeed: 15
+  curAmmo: 100
+  maxAmmo: 100
   infiniteAmmo: 1
-  shootRate: 1
+  shootRate: 5
 --- !u!54 &763805272
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2185,7 +2189,7 @@ Transform:
   m_LocalScale: {x: 49, y: 15, z: 1}
   m_Children: []
   m_Father: {fileID: 1897591381}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1275602279
 GameObject:
@@ -2429,7 +2433,7 @@ GameObject:
   - component: {fileID: 1346676039}
   - component: {fileID: 1346676038}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: inside wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
@@ -2505,11 +2509,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1346676037}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.09675765, y: 2.413, z: 6.3693724}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.09675789, y: 2.29, z: 2.3700008}
+  m_LocalScale: {x: 20, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 1897591381}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1364179045
 PrefabInstance:
@@ -2568,6 +2572,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b9eb388d9a36414c952c145c866a60c, type: 3}
+--- !u!1 &1439779366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1439779368}
+  - component: {fileID: 1439779367}
+  - component: {fileID: 1439779369}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1439779367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439779366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37926f7d18b684e2e93b0af1a456240e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  ammoText: {fileID: 0}
+  healthBarFill: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  endGameScreen: {fileID: 0}
+  endGameHeaderText: {fileID: 0}
+  endGameScoreText: {fileID: 0}
+--- !u!4 &1439779368
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439779366}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.878436, y: 8.810303, z: 12.858557}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1439779369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439779366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48a989a8ad7fd42aea2fc1e1b72cf0db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreToWin: 0
+  curScore: 0
+  gamePaused: 0
 --- !u!1 &1571308040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,8 +3024,8 @@ Transform:
   - {fileID: 1275602283}
   - {fileID: 376058524}
   - {fileID: 434528006}
-  - {fileID: 1346676041}
   - {fileID: 999684516}
+  - {fileID: 1346676041}
   m_Father: {fileID: 1782070960}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

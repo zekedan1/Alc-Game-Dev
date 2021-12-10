@@ -18,7 +18,7 @@ public class GameUI : MonoBehaviour
     [Header("End Game Screen")]
     public GameObject endGameScreen;
     public TextMeshProUGUI endGameHeaderText;
-    public TextMeshProGUI endGameScoreText;
+    public TextMeshProUGUI endGameScoreText;
 
     // Instance
     public static GameUI instance;
@@ -47,19 +47,19 @@ public class GameUI : MonoBehaviour
         healthBarFill.fillAmount = (float)curHP / (float)maxHP;
     }
 
-    public UpdateScoreText(int score)
+    public void UpdateScoreText(int score)
     {
         scoreText.text = "Score:" + score;
     }
 
-    public UpdateAmmoText(int curAmmo, int maxAmmo)
+    public void UpdateAmmoText(int curAmmo, int maxAmmo)
     {
         ammoText.text = "Ammo: " + curAmmo + " / " + maxAmmo;
     }
 
     public void TogglePauseMenu(bool paused)
     {
-        pauseMenu.SetActive(pause);
+        pauseMenu.SetActive(paused);
     }
 
     public void SetEndGameScreen(bool won, int score)
@@ -72,7 +72,7 @@ public class GameUI : MonoBehaviour
 
     public void OnResumeButton()
     {
-
+        GameManager.instance.TogglePauseGame();
     }
     public void OnRestartButton()
     {
@@ -81,6 +81,6 @@ public class GameUI : MonoBehaviour
 
     public void OnMenuButton()
     {
-        SceneManage.LoadScene("Menu");
+        SceneManager.LoadScene("Menu");
     }
 }
