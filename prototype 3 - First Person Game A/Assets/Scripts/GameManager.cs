@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
     public void LoseGame()
     {
         //Set the end screen
-        GameUI.instance.GetEndGameScreen(false, curScore);
+        GameUI.instance.SetEndGameScreen(false, curScore);
         Time.timeScale = 0.0f;
         gamePaused = true;
     }

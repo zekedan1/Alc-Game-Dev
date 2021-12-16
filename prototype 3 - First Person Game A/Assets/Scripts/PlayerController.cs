@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         GameUI.instance.UpdateHealthBar(curHP, maxHP);
-        GameUI.instance.scoreText(0);
+        GameUI.instance.UpdateScoreText(0);
         GameUI.instance.UpdateAmmoText(weapons.curAmmo, weapons.maxAmmo);
     }
 
