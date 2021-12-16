@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Time.timeScale = 1.0f;
     }
 
     // Update is called once per frame
@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = gamePaused == true ? 0.0f : 1.0f;
 
         GameUI.instance.TogglePauseMenu(gamePaused);
+
+        Cursor.lockState = gamePaused == true ? CursorLockMode.None : CursorLockMode.Locked;
     }
     public void AddScore(int score)
     {
@@ -53,5 +55,13 @@ public class GameManager : MonoBehaviour
     {
         //Set game screen
         GameUI.instance.SetEndGameScreen(true,curScore);
+    }
+
+    public void LoseGame()
+    {
+        //Set the end screen
+        GameUI.instance.GetEndGameScreen(false, curScore);
+        Time.timeScale = 0.0f;
+        gamePaused = true;
     }
 }

@@ -28,6 +28,13 @@ public class PlayerController : MonoBehaviour
         weapons = GetComponent<Weapons>();
         Cursor.lockState = CursorLockMode.Locked;
     }
+    
+    void Start()
+    {
+        GameUI.instance.UpdateHealthBar(curHP, maxHP);
+        GameUI.instance.scoreText(0);
+        GameUI.instance.UpdateAmmoText(weapons.curAmmo, weapons.maxAmmo);
+    }
 
 
     public void TakeDamage(int damage)
@@ -41,13 +48,16 @@ public class PlayerController : MonoBehaviour
 
     void Die()
     {
-
+        GameManager.instance.LoseGame();
     }
 
    
     // Update is called once per frame
     void Update()
     {
+        //Don't do anything when the game is paused
+        if(GameManager.instance.gamePaused == true)
+            return;
         Move();
         CamLook();
         if(Input.GetButtonDown("Jump"))
