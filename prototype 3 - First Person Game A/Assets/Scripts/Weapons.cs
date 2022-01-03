@@ -40,7 +40,7 @@ public class Weapons : MonoBehaviour
     
     public void Shoot()
     {
-        AudioSource.PlayerOneShot(shootSfx);
+        audioSource.PlayOneShot(shootSfx);
         lastShootTime = Time.time;
         curAmmo--;
 

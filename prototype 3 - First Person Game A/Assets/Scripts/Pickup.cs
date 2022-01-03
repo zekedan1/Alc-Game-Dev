@@ -47,7 +47,7 @@ public class Pickup : MonoBehaviour
                 break;
 
             }
-            other.GetComponent<AudioSource>().PlayerOneShot(pickupSfx);
+            other.GetComponent<AudioSource>().PlayOneShot(pickupSfx);
             Destroy(gameObject);
         }
     }
