@@ -5,7 +5,7 @@ using UnityEngine;
 public class Weapons : MonoBehaviour
 {
     public  ObjectPool bulletPool;
-    public GameObject bulletPrefab;
+
     public Transform muzzle;
     public float bulletSpeed;
 
@@ -24,8 +24,9 @@ public class Weapons : MonoBehaviour
         if(GetComponent<PlayerController>())
         {
             isPlayer = true;
-            audioSource = GetComponent<AudioSource>();
+            
         }
+        audioSource = GetComponent<AudioSource>();
     }
     public bool CanShoot()
     {
